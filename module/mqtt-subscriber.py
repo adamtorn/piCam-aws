@@ -1,3 +1,4 @@
+# Spot Security: Module - Rasp Pi - AWS IoT
 #!/usr/bin/python3
 
 #required libraries
