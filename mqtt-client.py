@@ -18,3 +18,9 @@ AWSIoTPythonSDK.MQTTLib.AWSIoTMQTTClient.configureAutoReconnectBackoffTime(baseR
 # baseReconnectQuietTimeSecond = 1;
 # maxReconnectQuietTimeSecond = 32;
 # stableConnectionTimeSecond = 20;
+
+# Offline Publish Requests Queueing with Draining
+# If client temp offline and disconnected due to network failure, 
+# publish requests will be added to internal queue until num reaches size limit of queue
+AWSIoTPythonSDK.MQTTLib.AWSIoTMQTTClient.configureOfflinePublishQueueing(queueSize, dropBehavior)
+
