@@ -1,5 +1,6 @@
 # Spot Security: Camera - Rasp Pi - AWS IoT
 #!/usr/bin/python3
+#initiate cmd: python3 mqtt-subscriber2.py          
 
 #required libraries
 import sys                                 
