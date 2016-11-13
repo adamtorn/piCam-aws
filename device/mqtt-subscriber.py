@@ -28,7 +28,7 @@ mqttc.on_subscribe = on_subscribe
 mqttc.on_message = on_message
 
 # Configure network encryption and authentication options. Enables SSL/TLS support.
-#adding client-side certificates and enabling tlsv1.2 support as required by aws-iot service
+# Add client-side certificates and enabling tlsv1.2 support as req'd by aws-iot service
 mqttc.tls_set("/home/username/root-CA.crt",
 	            certfile="/home/username/6fdda68178-certificate.pem.crt",
 	            keyfile="/home/username/6fdda68178-private.pem.key",
