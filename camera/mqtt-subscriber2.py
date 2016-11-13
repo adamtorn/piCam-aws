@@ -26,6 +26,7 @@ def on_message(mqttc, obj, msg):
 mqttc = mqtt.Client(client_id="mqtt-test")
 
 mqttc.on_connect = on_connect
+time.sleep(5)
 mqttc.on_subscribe = on_subscribe
 mqttc.on_message = on_message
 
