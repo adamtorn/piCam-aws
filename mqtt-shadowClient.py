@@ -19,3 +19,7 @@ myDeviceShadow.shadowUnregisterDeltaCallback()
 # To retrieve MQTTClient to perform plain MQTT ops along with shadow ops
 myMQTTClient = myShadowClient.getMQTTConnection()
 myMQTTClient.publish("plainMQTTTopic", "Payload", 1)
+
+# Progressive Reconect Backoff
+# When non-client-side disconnect occurs, SDK will auto-reconnect
+AWSIoTPythonSDK.MQTTLib.AWSIoTMQTTShadowClient.configureAutoReconnectBackoffTime(baseReconnectQuietTimeSecond, maxReconnectQuietTimeSecond, stableConnectionTimeSecond)
