@@ -24,3 +24,16 @@ AWSIoTPythonSDK.MQTTLib.AWSIoTMQTTClient.configureAutoReconnectBackoffTime(baseR
 # publish requests will be added to internal queue until num reaches size limit of queue
 AWSIoTPythonSDK.MQTTLib.AWSIoTMQTTClient.configureOfflinePublishQueueing(queueSize, dropBehavior)
 
+# Drop the newest request in the queue
+AWSIoTPythonSDK.MQTTLib.DROP_NEWEST = 1
+
+# Configure size of offlinePublishQueue to 5
+myClient.configureOfflinePublishQueueing(5, AWSIoTPythonSDK.MQTTLib.DROP_NEWEST);
+HEAD ['pub_req1', 'pub_req2', 'pub_req3', 'pub_req4', 'pub_req5']
+
+# Client back online, draining starts
+AWSIoTPythonSDK.MQTTLib.AWSIoTMQTTClient.configureDrainingFrequency(frequencyInHz)
+# Publish and draining defaults:
+# offlinePublishQueueSize = 20
+# dropBehavior = DROP_NEWEST
+# drainingFrequency = 2Hz
