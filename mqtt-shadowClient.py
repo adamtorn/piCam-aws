@@ -23,3 +23,7 @@ myMQTTClient.publish("plainMQTTTopic", "Payload", 1)
 # Progressive Reconect Backoff
 # When non-client-side disconnect occurs, SDK will auto-reconnect
 AWSIoTPythonSDK.MQTTLib.AWSIoTMQTTShadowClient.configureAutoReconnectBackoffTime(baseReconnectQuietTimeSecond, maxReconnectQuietTimeSecond, stableConnectionTimeSecond)
+# Defaults:
+# baseReconnectQuietTimeSecond = 1;
+# maxReconnectQuietTimeSecond = 32;
+# stableConnectionTimeSecond = 20;
