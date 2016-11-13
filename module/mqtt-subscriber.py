@@ -1,6 +1,6 @@
 # Spot Security: Module - Rasp Pi - AWS IoT
 #!/usr/bin/python3
-#initiate cmd: python3 iot-mqtt-subscriber.py          
+#initiate cmd: python3 mqtt-subscriber.py          
 
 #required libraries
 import sys                                 
