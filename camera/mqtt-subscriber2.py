@@ -1,4 +1,10 @@
 # Spot Security: Camera - Rasp Pi - AWS IoT
+# tbd Mosquitto broker connection
+	# broker="test.mosquitto.org"
+	# topic_pub='/camera'
+	# topic_sub='$SYS/#'
+
+
 #!/usr/bin/python3
 #initiate cmd: python3 mqtt-subscriber2.py          
 
@@ -6,6 +12,7 @@
 import sys                                 
 import ssl
 import paho.mqtt.client as mqtt
+from time import sleep
 
 # Called while client tries to establish connection with the server 
 def on_connect(mqttc, obj, flags, rc):
