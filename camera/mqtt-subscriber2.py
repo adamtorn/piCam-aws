@@ -12,7 +12,8 @@
 import sys                                 
 import ssl
 import paho.mqtt.client as mqtt
-from time import sleep
+import time
+import os
 
 # Called while client tries to establish connection with the server 
 def on_connect(mqttc, obj, flags, rc):
@@ -37,11 +38,12 @@ time.sleep(5)
 mqttc.on_subscribe = on_subscribe
 mqttc.on_message = on_message
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
 # Configure network encryption and authentication options. Enables SSL/TLS support.
 # Add client-side certificates and enabling tlsv1.2 support as req'd by aws-iot service
-mqttc.tls_set("/home/auth_data/VeriSign-Class%203-Public-Primary-Certification-Authority-G5.pem.crt",
-	            certfile="home/auth_data/cam-1621824b15-certificate.pem.crt",
-	            keyfile="home/auth_data/cam-1621824b15-private.pem.key",
+mqttc.tls_set(dir_path + "/auth_data/VeriSign-Class_203-Public-Primary-Certification-Authority-G5.pem.crt",
+	            certfile=dir_path + "/auth_data/cam-1621824b15-certificate.pem.crt",
+	            keyfile=dir_path + "/auth_data/cam-1621824b15-private.pem.key",
               tls_version=ssl.PROTOCOL_TLSv1_2, 
               ciphers=None)
 
